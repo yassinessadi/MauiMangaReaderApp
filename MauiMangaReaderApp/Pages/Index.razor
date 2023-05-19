@@ -1,0 +1,40 @@
+﻿@page "/"
+
+@if (Models.Count == 0 || Models == null)
+{
+	<div class="d-flex justify-content-center align-items-center position-fixed w-100 h-100">
+		<button class="btn btn-primary" type="button" disabled>
+			<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+			Loading...
+		</button>
+	</div>
+		
+}else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th></th>
+			</tr>
+		</thead>
+			@foreach (var item in Models)
+			{
+				<tbody>
+					<tr>
+						<th>
+							<img src="@item.Image" />
+						</th>
+					</tr>
+				</tbody>
+			}
+	</table>
+}
+
+
+
+
+
+
+
+
+@*<SurveyPrompt Title="How is Blazor working for you?" />*@
